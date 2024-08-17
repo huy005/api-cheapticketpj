@@ -13,7 +13,7 @@ I/User:新規登録、ログイン、画像アップロード、予約情報取�
 User情報管理
 
 1/新規登録:
-*ロール: "ADMIN", "CLIENT"(規定値).
+*ロール: "ADMIN", "CLIENT"(既定値).
 
 HTTP method: POST, URL: http://localhost:3000/api/v1/users/register
 Input: {
@@ -21,7 +21,7 @@ Input: {
     "email": "nakano004@gmail.com",
     "password": "na000",
     "phoneNumber": "0802293887"
-}
+};
 Output: { "status": 200, "responseContent": {
     "id": 8,
     "username": "Nakano Aki",
@@ -40,14 +40,14 @@ HTTP method: POST, URL: http://localhost:3000/api/v1/users/register
 Input:{
     "email": "nakano004@gmail.com",
     "password": "na000"
-}
+};
 Output: { "status": 200, "responseContent":　"Token"とともにログインしました。}
 
 3/画像アップロード
 *トークン必要
 
 HTTP method: POST, URL: http://localhost:3000/api/v1/users/login
-Input:画像、取得したトークン
+Input:画像、取得したトークン;
 Output: { "status": 200,"responseContent": {
     "id": 7,
     "username": "Nakano Aki",
@@ -78,7 +78,7 @@ Input: {
     "name":"Kansai",
     "address": "009 OKansai",
     "place": "Osaka"
-}
+};
 Output: { "status": 200, "responseContent": {
     "id": 38,
     "name": "Kansai",
@@ -121,7 +121,7 @@ Input: {
           "price": 200000,
           "createdAt": "2024-09-09 09:55:00",
           "updatedAt": "2024-09-17 10:23:00"
-}
+};
 Output: { "status": 200, "responseContent": {
     "id": 36,
     "departure": 1,
