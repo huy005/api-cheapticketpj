@@ -1,0 +1,26 @@
+{
+  "name": "cheap-ticket-pj",
+  "version": "1.0.0",
+  "description": "This app helps to buy cheap tickets.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "huy005",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-fingerprint": "^1.2.2",
+    "jsonwebtoken": "^9.0.2",
+    "mkdirp": "^3.0.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "sequelize-cli": "^6.6.2"
+  }
+}
