@@ -1,7 +1,9 @@
 こちらのアプリは安いチケット検索・予約などをサポートするアプリです。
 
 ＊＊＊事前準備＊＊＊
+
 1.configでDB情報を設定
+
 2.Postmanなどを導入
 
 ＊＊＊機能＊＊＊
@@ -12,6 +14,7 @@ User情報管理
 
 1/新規登録:
 *ロール: "ADMIN", "CLIENT"(規定値).
+
 HTTP method: POST, URL: http://localhost:3000/api/v1/users/register
 Input: {
     "username":"Nakano Aki",
@@ -32,6 +35,7 @@ Output: { "status": 200, "responseContent": {
 
 2/ログイン
 *トークン取得・認証・認可可能
+
 HTTP method: POST, URL: http://localhost:3000/api/v1/users/register
 Input:{
     "email": "nakano004@gmail.com",
@@ -41,6 +45,7 @@ Output: { "status": 200, "responseContent":　"Token"とともにログインし
 
 3/画像アップロード
 *トークン必要
+
 HTTP method: POST, URL: http://localhost:3000/api/v1/users/login
 Input:画像、取得したトークン
 Output: { "status": 200,"responseContent": {
@@ -59,6 +64,7 @@ Output: { "status": 200,"responseContent": {
 4/旅行情報取得
 ユーザー関連と旅行情報(Trips)を取得
 *トークン必要、認証
+
 HTTP method: GET, URL: http://localhost:3000/api/v1/users/upload-file
 
 II/Stations:CURD、バリデーション。。。
@@ -66,6 +72,7 @@ Station情報管理
 
 1.作成
 *トークン必要、認証
+
 HTTP method: POST, URL: http://localhost:3000/api/v1/stations/
 Input: {
     "name":"Kansai",
@@ -83,24 +90,29 @@ Output: { "status": 200, "responseContent": {
 
 2.読み取り
 *トークン必要、認証
+
 HTTP method: GET, URL: http://localhost:3000/api/v1/stations/
 
 3.フィルター読み取り
 *トークン必要、クエリパラメータ(?key=value)
+
 HTTP method: GET, URL: http://localhost:3000/api/v1/stations?name=Ha
 
 4.更新
 **トークン必要、認証、認可("ADMIN", "CLIENT")、:idでの更新
+
 HTTP method: PUT, URL: http://localhost:3000/api/v1/stations/:id
 
 5.削除
 **トークン必要、認証、認可("ADMIN")、:idでの削除
+
 HTTP method: DELETE, URL: http://localhost:3000/api/v1/stations/:id
 
 III/Trips:CURD。。。
 旅行情報管理
 1.作成
 *トークン必要、認証
+
 HTTP method: POST, URL: http://localhost:3000/api/v1/trips/
 Input: {
           "departure": 1,
@@ -122,17 +134,21 @@ Output: { "status": 200, "responseContent": {
 
 2.読み取り
 *トークン必要、認証
+
 HTTP method: GET, URL: http://localhost:3000/api/v1/trips/
 
 3.更新
 **トークン必要、認証、認可("ADMIN", "CLIENT")、:idでの更新
+
 HTTP method: PUT, URL: http://localhost:3000/api/v1/trips/:id
 
 4.削除
-**トークン必要、認証、認可("ADMIN")、:idでの削除
+*トークン必要、認証、認可("ADMIN")、:idでの削除
+
 HTTP method: DELETE, URL: http://localhost:3000/api/v1/trips/:id
 
 IV/Finger Print
 ユーザーのブラウザーやデバイスの特徴を組み合わせた一意の識別子
-**トークン必要
+*トークン必要
+
 HTTP method: PUT, URL: http://localhost:3000/api/v1/finger-print
